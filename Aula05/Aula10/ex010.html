@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Java Script</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #multas{
+            border-radius: 8px;
+            padding: 20px;
+            top: 30px;
+            margin: 0 auto; 
+            margin-block: 10px;
+            width: 500px;
+            padding-block: 30px;
+            background-color: #191919;
+            color: #fff;
+            text-align: center;
+            box-shadow: 2px 2px 5px #000;
+        }
+        Input{
+            margin-block: .35rem;
+            height: 40px;
+            font-style: italic;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+        #multas h1{
+            font: normal 20pt Arial;
+            padding-bottom: 0px;
+        }
+
+        strong{
+            font-family: sans-serif;
+            font-style: italic;
+            font-weight: 300;   
+        }
+    </style>
+</head>
+<body>
+    <div id="multas">
+        <h1>Sistema de multa</h1>
+        Velocidade do carro:<br>
+        <input type="number" name="txtvel" id="txtvel"><br>
+        <input type="buttom" value="Verificar" onclick="caucular()">
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function caucular(){
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<h1>Sua velocidade é ${vel}
+            Kilometros por hora</h1><br>`
+            if(vel > 60){
+                res.innerHTML += `<h3>Você esta <strong>multado</strong> por exceso de velocidade</h3>`
+            }
+            res.innerHTML += `<h1>Dirija sempre com o sinto de seguraça.</h1`
+        }
+    </script>
+
+</body>
+</html>
